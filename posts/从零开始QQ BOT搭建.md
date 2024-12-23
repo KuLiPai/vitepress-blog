@@ -48,7 +48,7 @@ Linux安装：
 - 如果是本地，就访问`http://127.0.0.1:6099/webui?token=xxxx`
 - 如果是服务器，需要添加安全组开放6099端口，然后访问：公网`ip:6099/webui?token=xxxx`
 
-![image.png](public/image.png)
+![image.png](../public/image.png)
 
 在Web面板中添加一个WebSocket服务，端口不冲突就行，我这里用6299.
 
