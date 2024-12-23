@@ -4,7 +4,7 @@
       <span>Hi, I'm KuLiPai 👋</span>
     </h1>
     <p class="description">
-      A stduent who is a student.
+      A stduent.
     </p>
   </div>
 </template>
