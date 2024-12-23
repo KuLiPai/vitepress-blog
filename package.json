@@ -2,7 +2,7 @@
   "name": "viteDoc",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "clark-cui <cuirongchuan@163.com>",
+  "author": "KuLiPai",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
