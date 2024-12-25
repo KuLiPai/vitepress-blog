@@ -1,7 +1,9 @@
 ---
 title: 从零开始QQ Bot搭建
+description: 从零开始QQ BOT搭建 
 date: 2024.12.13
-tags: Bot
+tags: 
+  - Bot
 categories: Bot
 ---
 
@@ -11,11 +13,11 @@ categories: Bot
 
 https://github.com/NapNeko/NapCatQQ?tab=readme-ov-file
 
-# 1.准备工作
+## 1.准备工作
 
 服务器/本地主机/安卓Termux，一个爱折腾的心
 
-# 2.开始安装
+## 2.开始安装
 
 https://napneko.github.io/guide/start-install
 
@@ -27,7 +29,7 @@ Linux安装：
 
 `curl -o [napcat.sh](http://napcat.sh/) [https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh](https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh) && sudo bash [napcat.sh](http://napcat.sh/)`
 
-# 3.基础配置
+## 3.基础配置
 
 安装好后，输入`napcat` 获取帮助
 
@@ -52,7 +54,7 @@ Linux安装：
 
 在Web面板中添加一个WebSocket服务，端口不冲突就行，我这里用6299.
 
-# 4.Bot开发
+## 4.Bot开发
 
 这里我们开启了WebSocket服务，需要一个对接的脚本，这里提供一个python的demo
 
@@ -162,6 +164,6 @@ if __name__ == "__main__":
 
 到这里就大功告成了！
 
-# 5.注意事项
+## 5.注意事项
 
 如果bot的号是新号，那么极有可能被冻结，但是不要慌，基本人脸识别一次都能解封。可以先登录bot号多发点消息图片加点好友/群（然后再退了
