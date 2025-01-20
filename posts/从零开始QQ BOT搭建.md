@@ -27,7 +27,7 @@ NapCat有两种安装方式**Framework**和**Shell** 
 
 Linux安装：
 
-`curl -o [napcat.sh](http://napcat.sh/) [https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh](https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh) && sudo bash [napcat.sh](http://napcat.sh/)`
+`curl -o napcat.sh https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh && sudo bash napcat.sh`
 
 ## 3.基础配置
 

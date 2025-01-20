@@ -10,7 +10,13 @@ importers:
     dependencies:
       gitalk:
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.8.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react:
+        specifier: ^17.0.2
+        version: 17.0.2
+      react-dom:
+        specifier: ^17.0.2
+        version: 17.0.2(react@17.0.2)
     devDependencies:
       '@shikijs/vitepress-twoslash':
         specifier: ^1.24.2
@@ -44,7 +50,7 @@ importers:
         version: 1.24.2
       vitepress:
         specifier: 1.5.0
-        version: 1.5.0(@algolia/client-search@5.17.1)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.4.49)(search-insights@2.6.0)(typescript@5.4.5)
+        version: 1.5.0(@algolia/client-search@5.17.1)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.4.49)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)(typescript@5.4.5)
 
 packages:
 
@@ -1322,6 +1328,11 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  react-dom@17.0.2:
+    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
+    peerDependencies:
+      react: 17.0.2
+
   react-flip-move@2.9.14:
     resolution: {integrity: sha512-XD8R8KPLa9GG3NM83FuWPJSGB9Emr2if9NQlJseZkE0YKd4cGq9gr74ehc/Erxr1nPo/Ln5uXf3LAImGG21TeQ==}
     peerDependencies:
@@ -1330,6 +1341,10 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react@17.0.2:
+    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+    engines: {node: '>=0.10.0'}
 
   regex-recursion@4.3.0:
     resolution: {integrity: sha512-5LcLnizwjcQ2ALfOj95MjcatxyqF5RPySx9yT+PaXu3Gox2vyAtLDjHB8NTJLtMGkvyau6nI3CfpwFCjPUIs/A==}
@@ -1367,6 +1382,9 @@ packages:
 
   sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+
+  scheduler@0.20.2:
+    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
 
   search-insights@2.6.0:
     resolution: {integrity: sha512-vU2/fJ+h/Mkm/DJOe+EaM5cafJv/1rRTZpGJTuFPf/Q5LjzgMDsqPdSaZsAe+GAWHHsfsu+rQSAn6c8IGtBEVw==}
@@ -1734,9 +1752,9 @@ snapshots:
 
   '@docsearch/css@3.8.1': {}
 
-  '@docsearch/js@3.8.1(@algolia/client-search@5.17.1)(search-insights@2.6.0)':
+  '@docsearch/js@3.8.1(@algolia/client-search@5.17.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)':
     dependencies:
-      '@docsearch/react': 3.8.1(@algolia/client-search@5.17.1)(search-insights@2.6.0)
+      '@docsearch/react': 3.8.1(@algolia/client-search@5.17.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)
       preact: 10.13.1
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1745,13 +1763,15 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.8.1(@algolia/client-search@5.17.1)(search-insights@2.6.0)':
+  '@docsearch/react@3.8.1(@algolia/client-search@5.17.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)':
     dependencies:
       '@algolia/autocomplete-core': 1.17.7(@algolia/client-search@5.17.1)(algoliasearch@5.17.1)(search-insights@2.6.0)
       '@algolia/autocomplete-preset-algolia': 1.17.7(@algolia/client-search@5.17.1)(algoliasearch@5.17.1)
       '@docsearch/css': 3.8.1
       algoliasearch: 5.17.1
     optionalDependencies:
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
       search-insights: 2.6.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -2471,7 +2491,7 @@ snapshots:
       call-bind: 1.0.2
       get-intrinsic: 1.2.0
 
-  gitalk@1.8.0:
+  gitalk@1.8.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
       autosize: 3.0.21
       axios: 0.19.2
@@ -2481,7 +2501,7 @@ snapshots:
       node-polyglot: 2.2.2
       preact: 8.1.0
       preact-compat: 3.16.0(preact@8.1.0)
-      react-flip-move: 2.9.14
+      react-flip-move: 2.9.14(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -3103,9 +3123,24 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-flip-move@2.9.14: {}
+  react-dom@17.0.2(react@17.0.2):
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react: 17.0.2
+      scheduler: 0.20.2
+
+  react-flip-move@2.9.14(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
 
   react-is@16.13.1: {}
+
+  react@17.0.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
 
   regex-recursion@4.3.0:
     dependencies:
@@ -3166,6 +3201,11 @@ snapshots:
     optional: true
 
   sax@1.2.4: {}
+
+  scheduler@0.20.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
 
   search-insights@2.6.0: {}
 
@@ -3336,10 +3376,10 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitepress@1.5.0(@algolia/client-search@5.17.1)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.4.49)(search-insights@2.6.0)(typescript@5.4.5):
+  vitepress@1.5.0(@algolia/client-search@5.17.1)(markdown-it-mathjax3@4.3.2(encoding@0.1.13))(postcss@8.4.49)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)(typescript@5.4.5):
     dependencies:
       '@docsearch/css': 3.8.1
-      '@docsearch/js': 3.8.1(@algolia/client-search@5.17.1)(search-insights@2.6.0)
+      '@docsearch/js': 3.8.1(@algolia/client-search@5.17.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(search-insights@2.6.0)
       '@iconify-json/simple-icons': 1.2.16
       '@shikijs/core': 1.24.2
       '@shikijs/transformers': 1.24.2

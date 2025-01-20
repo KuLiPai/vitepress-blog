@@ -24,7 +24,7 @@ Inspire:[wochap](https://github.com/wochap/nvim)
 
 ### 1.1换源
 
-`sudo vim/etc/pacman.d/mirrorlist`
+`sudo vim /etc/pacman.d/mirrorlist`
 
 添加
 
@@ -37,8 +37,9 @@ Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 
 ### 1.2清理和同步本地软件包缓存
 
-`sudo pacman -Syy
-sudo pacman -Scc`
+`sudo pacman -Syy`
+
+`sudo pacman -Scc`
 
 ### 1.3安装依赖
 
