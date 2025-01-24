@@ -66,6 +66,11 @@ async function config() {
           text: "📃Archives",
           link: "/archives",
         },
+        {
+          text: "🤝Friends",
+          link: "https://kulipai.top/#/friends",
+        },
+
       ],
       socialLinks: [
         { icon: "github", link: "https://github.com/kulipai" },
