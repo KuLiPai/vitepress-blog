@@ -1,12 +1,13 @@
 ---
-title: 10分钟用安卓手机开发安卓
-description: 这是一篇介绍如何用安卓手机开发安卓的教程。 
+title: 30分钟用安卓手机开发安卓app
+description: 这是一篇介绍如何用安卓手机开发安卓app的教程。 
 date: 2025.01.20
 tags: 
   - Android
   - AndroLua
 categories: 
   - Android
+
 ---
 ## 前言
 
