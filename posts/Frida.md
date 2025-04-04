@@ -204,3 +204,60 @@ Java.performNow(function(){
 ```
 
 ‍
+
+## 动态加载dex
+
+```javascript
+
+    Java.perform(function(){
+        Java.enumerateClassLoaders({
+           onMatch:function(loader){
+                try{
+                    if(loader.loadClass("com.alexw.app")){
+                        Java.classFactory.loader=loader;
+                        var app=Java.use("com.alexw.app");
+                        console.log(app);
+                        app.sayHello.implementation=function(){
+                            return "bye";
+                        }
+                    }catch(error){
+
+                    }
+                },
+                onComplete:function(){
+
+                }
+           }
+        });
+    });
+```
+
+
+
+## 在主线程上运行
+
+```javascript
+Java.perform(function() {
+    Java.choose("com.ad2001.frida0x1.MainActivity", {
+        onMatch: function(instance) {
+            console.log("[+] 找到MainActivity实例");
+            
+            // 重要：确保在主线程上调用check方法
+            Java.scheduleOnMainThread(function() {
+                try {
+                    console.log("[+] 尝试在主线程调用check方法");
+                    instance.check(0, 4);
+                    console.log("[+] 调用成功");
+                } catch (e) {
+                    console.log("[-] 调用check失败: " + e);
+                }
+            });
+        },
+        onComplete: function() {
+            console.log("[+] 实例搜索完成");
+        }
+    });
+})
+```
+
+
