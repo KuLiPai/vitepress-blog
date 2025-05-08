@@ -18,6 +18,7 @@ async function config() {
           href: "/horse.svg",
         },
       ],
+      ['link', { rel: 'stylesheet', href: '/style.css' }],
       [
         "meta",
         {

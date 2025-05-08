@@ -5,6 +5,7 @@ import MyLayout from "./components/MyLayout.vue";
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 import "@shikijs/vitepress-twoslash/style.css";
 import type { EnhanceAppContext } from "vitepress";
+import { onMounted } from 'vue';
 
 import "./custom.css";
 
@@ -15,5 +16,13 @@ export default {
     app.component("Archives", Archives);
     app.component("Tags", Tags);
     app.use(TwoslashFloatingVue);
+  },
+  setup() {
+    onMounted(() => {
+      // 确保在 DOM 加载完成后执行脚本
+      const script = document.createElement('script');
+      script.src = '/script.js';
+      document.body.appendChild(script);
+    });
   },
 };
