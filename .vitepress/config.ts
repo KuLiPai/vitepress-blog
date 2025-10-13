@@ -70,7 +70,7 @@ async function config() {
         },
         {
           text: "🤝Friends",
-          link: "https://kulipai.top/#/friends ",
+          link: "/friends",
         },
       ],
       socialLinks: [
