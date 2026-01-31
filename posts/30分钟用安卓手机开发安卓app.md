@@ -73,6 +73,7 @@ categories:
 ```lua
 import "java.lang.*","java.util.*" --导入库
 import "android.os.*","android.app.*" 
+
 activity {  --当前界面
   Title = res.string.app_title,  --标题
   ContentView = res.layout.main  --布局

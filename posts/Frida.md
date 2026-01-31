@@ -27,7 +27,6 @@ categories:
 
 ```javascript
 Java.perform(function() {
-
   var <class_reference> = Java.use("<package_name>.<class>");
   <class_reference>.<method_to_hook>.implementation = function(<args>) {
 

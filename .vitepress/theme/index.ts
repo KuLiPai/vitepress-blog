@@ -9,6 +9,7 @@ import type { EnhanceAppContext } from "vitepress";
 import { onMounted } from 'vue';
 
 import "./custom.css";
+import "./custom-tooltip.css";
 
 export default {
   extends: Theme,
@@ -16,7 +17,7 @@ export default {
   enhanceApp({ app }: EnhanceAppContext) {
     app.component("Archives", Archives);
     app.component("Tags", Tags);
-    app.component("Friends",Friends);
+    app.component("Friends", Friends);
     app.use(TwoslashFloatingVue);
   },
   setup() {

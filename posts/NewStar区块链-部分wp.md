@@ -29,7 +29,7 @@ categories:
 >
 > 4.使用remix编译运行附件中的合约，将输出进行提交
 >
-> ```sol
+> ```solidity
 > // SPDX-License-Identifier: MIT
 > pragma solidity ^0.8.0;
 >
@@ -68,7 +68,7 @@ categories:
 
 > 理论直接读取0槽位也行，但是这里给的代码和部署的合约不一致
 
-```sol
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -106,7 +106,7 @@ contract SimpleVault {
 
 ## 区块链-INTbug
 
-```sol
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -214,7 +214,7 @@ contract SimpleOverflowVault {
 
 其中这里还专门用unchecked ，
 
-```sol
+```solidity
 unchecked {
 	totalPoints -= points;
 	userSpentPoints[msg.sender] -= points;

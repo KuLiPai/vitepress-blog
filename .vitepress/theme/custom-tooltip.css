@@ -1,0 +1,29 @@
+/* Custom Hover Tooltip Styles */
+.custom-hover-popup {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--vp-c-text-1);
+    background-color: var(--vp-c-bg-soft);
+    border-radius: 4px;
+}
+
+/* Ensure v-menu doesn't break layout by forcing it to be inline-block (though tag=span helps, styling ensures it) */
+.twoslash-hover {
+    display: inline-block !important;
+    vertical-align: bottom;
+    /* Align with text */
+}
+
+/* Adjust pointer cursor */
+.twoslash-hover {
+    cursor: help;
+    border-bottom: 1px dotted var(--vp-c-brand);
+}
+
+/* Fix for v-menu wrapping */
+.v-popper--theme-twoslash .v-popper__inner {
+    padding: 0 !important;
+    background: var(--vp-c-bg) !important;
+    border-color: var(--vp-c-divider) !important;
+}

@@ -1,6 +1,7 @@
 import { getPosts, getPostLength } from "./theme/serverUtils";
 import { buildBlogRSS } from "./theme/rss";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
+import { transformerHover } from "./theme/transformers/transformerHover"; // Import the custom transformer
 import mathjax3 from "markdown-it-mathjax3";
 import { defineConfig } from "vitepress";
 
@@ -103,7 +104,7 @@ async function config() {
         light: "vitesse-light",
         dark: "vitesse-dark",
       },
-      codeTransformers: [transformerTwoslash()],
+      codeTransformers: [transformerTwoslash(), transformerHover()],
       config: (md) => {
         md.use(mathjax3);
 
