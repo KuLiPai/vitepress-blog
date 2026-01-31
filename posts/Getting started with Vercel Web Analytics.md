@@ -1,7 +1,7 @@
 ---
 title: Getting started with Vercel Web Analytics
 description: This guide will help you get started with using Vercel Web Analytics on your project, showing you how to enable it, add the package to your project, deploy your app to Vercel, and view your data in the dashboard.
-date: 2026-01-31
+date: 2026.01.31
 tags: 
   - Vercel
   - Analytics
