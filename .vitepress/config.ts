@@ -11,6 +11,13 @@ async function config() {
     description: "Home of KuLiPai",
     head: [
       [
+        'script',
+        {
+          defer: '',
+          src: '/_vercel/insights/script.js'
+        }
+      ],
+      [
         "link",
         {
           rel: "icon",
