@@ -16,11 +16,11 @@ categories:
 
 用Godot RE Tool逆向出gd代码，发现当分数\=7906显示flag
 
-![image](../public/image-20251014160348-vxs3z5t.png)
+![image](/羊城杯部分RE/image-20251014160348-vxs3z5t.png)
 
 用cheat engine改分数到7906，发现flag
 
-![image](../public/image-20251014160358-7psyvey.png)
+![image](/羊城杯部分RE/image-20251014160358-7psyvey.png)
 
 DASCTF{xCuBiFYr-u5aP2-QjspKk-rh0LO-w9WZ8DeS}
 
@@ -40,7 +40,7 @@ exit-\>eval,
 
 i-\>input等等
 
-![image](../public/image-20251014155943-erbbvxe.png)
+![image](/羊城杯部分RE/image-20251014155943-erbbvxe.png)
 
 将代码按照这些函数执行的功能化简，最终如下
 
@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
 贪心算法爆破flag
 
-![image](../public/image-20251014160131-w4melf2.png)
+![image](/羊城杯部分RE/image-20251014160131-w4melf2.png)
 
 一个一个字节爆破即可得到flag
 

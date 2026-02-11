@@ -17,14 +17,14 @@ categories:
 
 先看java层
 
-![image](/image-20250815104115-hwegnvp.png)
+![image](/LilCTF2025/image-20250815104115-hwegnvp.png)
 看到最终经过check和密文进行比较
 
 分析native层的check函数
 
-![image](/image-20250815104145-w3ydy4x.png)
+![image](/LilCTF2025/image-20250815104145-w3ydy4x.png)
 
-![image](/image-20250815104221-r8ye9km.png)
+![image](/LilCTF2025/image-20250815104221-r8ye9km.png)
 
 发现加密大致是分块替换替换表:`[0xD, 0xE, 0xF, 0xC, 0xB, 0xA, 9, 8, 6, 7, 5, 4, 2, 3, 1, 0]`​
 
@@ -34,7 +34,7 @@ categories:
 
 发现base64换表
 
-![image](/image-20250815104207-lc4p43y.png)
+![image](/LilCTF2025/image-20250815104207-lc4p43y.png)
 
 写解密脚本
 
@@ -240,7 +240,7 @@ iexStart-Process "$env:SystemRoot\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
 
 下载jpg打开发现
 
-![image](/image-20250815180458-1r7zitd.png)
+![image](/LilCTF2025/image-20250815180458-1r7zitd.png)
 
 转换一下
 
@@ -327,11 +327,11 @@ arm的架构，用qemu运行gdb调试
 
 ​`qemu-system-arm -M vexpress-a9 -nographic -kernel ./uboot -S -s`​
 
-![image](/image-20250816155556-qfzm4lr.png)
+![image](/LilCTF2025/image-20250816155556-qfzm4lr.png)
 
 随便输入字符后ida步步入
 
-![image](/image-20250816155546-ozxskal.png)
+![image](/LilCTF2025/image-20250816155546-ozxskal.png)
 
 发现了判断密码的汇编片段
 
@@ -341,11 +341,11 @@ arm的架构，用qemu运行gdb调试
 
 找到密文如下
 
-![image](/image-20250816155533-y9tgafp.png)
+![image](/LilCTF2025/image-20250816155533-y9tgafp.png)
 
 ‍
 
-![image](/image-20250816154611-rlltqai.png)
+![image](/LilCTF2025/image-20250816154611-rlltqai.png)
 
 ‍
 
@@ -353,23 +353,23 @@ arm的架构，用qemu运行gdb调试
 
 在QLineEdit打断点，断到获取输入的地方，即qWidget库中QlineEdit函数
 
-![image](/image-20250817125630-iyrkbgt.png)
+![image](/LilCTF2025/image-20250817125630-iyrkbgt.png)
 
-![image](/image-20250817124658-xifnj2y.png)
+![image](/LilCTF2025/image-20250817124658-xifnj2y.png)
 
-![image](/image-20250817125753-7jqt9eo.png)
+![image](/LilCTF2025/image-20250817125753-7jqt9eo.png)
 
 运行到此处看调用堆栈找到判断逻辑函数处
 
 sub_410100函数判断
 
-![image](/image-20250817124357-42j4all.png)
+![image](/LilCTF2025/image-20250817124357-42j4all.png)
 
-![image](/image-20250817124849-egl4x6q.png)
+![image](/LilCTF2025/image-20250817124849-egl4x6q.png)
 
 eax地址往下看看到了明文
 
-![image](/image-20250817124327-a68dvq8.png)
+![image](/LilCTF2025/image-20250817124327-a68dvq8.png)
 
 ​`LILCTF{Q7_cre4t0r_1s_very_c0nv3ni3nt}`​
 

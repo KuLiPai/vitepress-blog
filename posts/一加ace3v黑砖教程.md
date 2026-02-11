@@ -50,9 +50,9 @@ categories:
 
 还是来到引导模式，在助手里如下操作，其中Recovery要自己找自己手机适配的twrp包
 
-​![屏幕截图 2025-02-20 165810](../public/2025-02-20165810-20250220182654-9l3g0o1.png)​
+​![屏幕截图 2025-02-20 165810](/一加ace3v黑砖教程/2025-02-20165810-20250220182654-9l3g0o1.png)​
 
-​![2025-02-20 165942](../public/2025-02-20165942-20250220182638-btf45x2.png)​
+​![2025-02-20 165942](/一加ace3v黑砖教程/2025-02-20165942-20250220182638-btf45x2.png)​
 
 刷入后重启到恢复模式（rec模式）
 
@@ -64,7 +64,7 @@ categories:
 
 将[Magisk](https://github.com/topjohnwu/Magisk)的apk改名成zip后缀传入手机目录，然后如下操作
 
-​![download](../public/download-20250220170334-o2fsvje.png)​
+​![download](/一加ace3v黑砖教程/download-20250220170334-o2fsvje.png)​
 
 开机后自行安装Magisk的apk即可。
 
@@ -126,8 +126,8 @@ fastboot --set-active=other
 2. 下载[KernelFlasher](https://github.com/capntrips/KernelFlasher/releases)
 3. 给KernelFlasher，root权限，并刷入内核，步骤如下（AK3包为第一步下载的AnyKernel3）
 
-    ​![61620957a1443c9-2048x867](../public/61620957a1443c9-2048x867-20250220174431-3at4xty.jpg)​
-4. 在Magisk里选择卸载，`完全卸载`​![Screenshot_20220213-123456_Magisk-696x1024](../public/Screenshot_20220213-123456_Magisk-696x1024-20250220174829-10ttpfm.png)​
+    ​![61620957a1443c9-2048x867](/一加ace3v黑砖教程/61620957a1443c9-2048x867-20250220174431-3at4xty.jpg)​
+4. 在Magisk里选择卸载，`完全卸载`​![Screenshot_20220213-123456_Magisk-696x1024](/一加ace3v黑砖教程/Screenshot_20220213-123456_Magisk-696x1024-20250220174829-10ttpfm.png)​
 5. 重启后下载[KernelSU管理器](https://github.com/tiann/KernelSU/releases)的apk，打开看到上方显示工作中GKI，那么就成功了！
 
 ‍

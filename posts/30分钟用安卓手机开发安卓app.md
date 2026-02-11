@@ -61,11 +61,11 @@ categories:
 
 来到项目目录，点左上角三个横，详情如图↓
 
-![image1.png](../public/1.png)
+![image1.png](/30分钟用安卓手机开发安卓app/1.png)
 
 以及res目录详情,
 
-![image2.png](../public/2.png)
+![image2.png](/30分钟用安卓手机开发安卓app/2.png)
 我们先回到main.lua
 
 看到它的代码
@@ -140,7 +140,7 @@ return {
 
 然后点击右上角三角，运行项目，即可看到效果。
 
-![image3.png](../public/3.png)
+![image3.png](/30分钟用安卓手机开发安卓app/3.png)
 
 
 ok!布局搞定啦
@@ -403,7 +403,7 @@ end}
 
 大功告成!
 
-![image4.png](../public/4.png)
+![image4.png](/30分钟用安卓手机开发安卓app/4.png)
 
 
 最后打包，在右上角项目里打包，即可

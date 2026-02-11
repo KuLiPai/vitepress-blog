@@ -22,13 +22,13 @@ categories:
 
 我们随便点点app发现在log里输出了，每次都是60字符，结尾大概率有“33”（最后发现是魔改base64换标然后把==替换成33了好像）
 
-​![3817bcf401ef1e430d07d29ba1b9292f](../public/3817bcf401ef1e430d07d29ba1b9292f-20250206142939-rwraj1j.jpg)​
+​![3817bcf401ef1e430d07d29ba1b9292f](/Hgame2025-week1安卓题重构做法/3817bcf401ef1e430d07d29ba1b9292f-20250206142939-rwraj1j.jpg)​
 
 首先分析一下apk，有一个DexCall类，加载了两个so文件，并且用so处理并复制一个dex到私有路径并加载dex，调用一个方法后删除dex。
 
-​![jadx](../public/image-20250206140624-xt68dad.png)​
+​![jadx](/Hgame2025-week1安卓题重构做法/image-20250206140624-xt68dad.png)​
 
-还有个toast类，里面有个native的**check**方法![jadx](../public/image-20250206141132-arnp78n.png)​
+还有个toast类，里面有个native的**check**方法![jadx](/Hgame2025-week1安卓题重构做法/image-20250206141132-arnp78n.png)​
 
 ```java
  check(this.mycontext, (String) DexCall.callDexMethod(this.mycontext, this.mycontext.getString(R.string.dex), this.mycontext.getString(R.string.classname), this.mycontext.getString(R.string.func1), s));
@@ -37,7 +37,7 @@ categories:
 
 比如`this.mycontext.getString(R.string.dex)`​在`resources.arsc`​里的`com.nobody.zunjia/string/string.xml`​
 
-​![mt管理器](../public/f1f13781f468ed9332c823ace377f63b-20250206141620-qdm06gw.jpg)​
+​![mt管理器](/Hgame2025-week1安卓题重构做法/f1f13781f468ed9332c823ace377f63b-20250206141620-qdm06gw.jpg)​
 
 复原后就是
 
@@ -45,9 +45,9 @@ categories:
  (String) DexCall.callDexMethod("zunjia.dex"，"com.nobody.zundujiadu", "encode", s);
 ```
 
-在apk里确实有`../public/zunjia.dex`​，但是格式错误，因为dex被加密，解密在zunjia.so里实现
+在apk里确实有`assets/zunjia.dex`​，但是格式错误，因为dex被加密，解密在zunjia.so里实现
 
-​![ida](../public/image-20250206142329-c6pld1m.png)​
+​![ida](/Hgame2025-week1安卓题重构做法/image-20250206142329-c6pld1m.png)​
 
 这里暂时没必要分析，只需要知道zunjia,so用于解密dex即可。
 
@@ -55,11 +55,11 @@ categories:
 
 分析check.so
 
-​![image](../public/image-20250206142802-qc9gcwl.png)​
+​![image](/Hgame2025-week1安卓题重构做法/image-20250206142802-qc9gcwl.png)​
 
-​![image](../public/image-20250206142823-mz8dzhi.png)​
+​![image](/Hgame2025-week1安卓题重构做法/image-20250206142823-mz8dzhi.png)​
 
-​![5fe3e77b428470ace2ddce2bc8915ef1](../public/5fe3e77b428470ace2ddce2bc8915ef1-20250206150300-b8errak.png)​
+​![5fe3e77b428470ace2ddce2bc8915ef1](/Hgame2025-week1安卓题重构做法/5fe3e77b428470ace2ddce2bc8915ef1-20250206150300-b8errak.png)​
 
 找到加密的地方了，这里标出了encode的函数，以及密文
 
@@ -330,7 +330,7 @@ public class DexCall {
 
 运行一次app，然后在log里即可看到flag
 
-​![fc3c4ca1c6950827fb261c6f4e5bfcd9](../public/fc3c4ca1c6950827fb261c6f4e5bfcd9-20250206145442-pgqsdju.png)​
+​![fc3c4ca1c6950827fb261c6f4e5bfcd9](/Hgame2025-week1安卓题重构做法/fc3c4ca1c6950827fb261c6f4e5bfcd9-20250206145442-pgqsdju.png)​
 
 当然优化的dexcall函数让dex就解密了在私有路径下/data/user/0/com.nobody.zunjia/cache/dex/zunjia.dex
 

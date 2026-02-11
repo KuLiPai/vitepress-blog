@@ -145,7 +145,7 @@ class TokenType(Enum):
 
 这一部分比较抽象，先放个图
 
-![image](../public/image-20250524171517-xmb58nr.png)
+![image](/从零开始构建自己的解释型编程语言/image-20250524171517-xmb58nr.png)
 
 比如存在一个式子`x = 1+2*3/(4-5)`​，我们需要将其处理成包含优先级的解析好的结构
 
@@ -165,7 +165,7 @@ class TokenType(Enum):
 
 ‍
 
-再比如![image](../public/image-20250524172238-kp8nm02.png)
+再比如![image](/从零开始构建自己的解释型编程语言/image-20250524172238-kp8nm02.png)
 
 将`print(1+2)`​解析，也是同理
 
@@ -234,7 +234,7 @@ class ArgsNode(ASTNode):
 
 所以我的根结构如下
 
-![image](../public/image-20250524173510-g92w43y.png)
+![image](/从零开始构建自己的解释型编程语言/image-20250524173510-g92w43y.png)
 
 其中每个node可以理解为每行的代码节点
 
@@ -371,7 +371,7 @@ class Parse_AST:
 
 通过一步一步递归变成树结构
 
-![image](../public/image-20250524180300-u519t7w.png)
+![image](/从零开始构建自己的解释型编程语言/image-20250524180300-u519t7w.png)
 
 左边是递归过程，右边是解析的结构
 
@@ -452,7 +452,7 @@ def _visit_func(self, funcNode, _Env):
 
 这里也用到了递归的方法
 
-![image](../public/image-20250524184726-j50hkkh.png)
+![image](/从零开始构建自己的解释型编程语言/image-20250524184726-j50hkkh.png)
 
 这里也不贴代码了，根据需求实现，我还处理了一元运算和列表，函数等运算
 
@@ -460,9 +460,9 @@ def _visit_func(self, funcNode, _Env):
 
 最后请看我的神奇语言，已经完美的运行起来了
 
-![95bb8cb9b4bad77fa33132440e530419](../public/95bb8cb9b4bad77fa33132440e530419-20250524185101-jknsg7j.png)
+![95bb8cb9b4bad77fa33132440e530419](/从零开始构建自己的解释型编程语言/95bb8cb9b4bad77fa33132440e530419-20250524185101-jknsg7j.png)
 
-![image](../public/image-20250524185443-l9f566u.png)
+![image](/从零开始构建自己的解释型编程语言/image-20250524185443-l9f566u.png)
 
 等我彻底完成后，会将源码开源在Github，[https://github.com/KuLiPai](https://github.com/KuLiPai)欢迎关注我:)
 

