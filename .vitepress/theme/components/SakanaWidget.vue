@@ -167,11 +167,11 @@ onBeforeUnmount(() => {
 
 @media (max-width: 640px) {
   .sakana-shell {
-    width: min(calc(100vw - 4px), 320px);
+    width: min(calc(100vw - 4px), 170px);
   }
 
   .sakana-widget-container {
-    height: 300px;
+    height: 170px;
   }
 }
 </style>
