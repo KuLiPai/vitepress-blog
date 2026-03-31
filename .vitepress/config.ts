@@ -1,11 +1,61 @@
 import { getPosts, getPostLength } from "./theme/serverUtils";
 import { buildBlogRSS } from "./theme/rss";
-import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 import { transformerHover } from "./theme/transformers/transformerHover"; // Import the custom transformer
 import mathjax3 from "markdown-it-mathjax3";
 import { defineConfig } from "vitepress";
 
+type StorageName = "localStorage" | "sessionStorage";
+
+function ensureNodeStorageShim(name: StorageName) {
+  if (typeof process === "undefined" || !process.versions?.node) {
+    return;
+  }
+
+  const currentStorage = globalThis[name] as Partial<Storage> | undefined;
+  if (
+    currentStorage &&
+    typeof currentStorage.getItem === "function" &&
+    typeof currentStorage.setItem === "function" &&
+    typeof currentStorage.removeItem === "function" &&
+    typeof currentStorage.clear === "function"
+  ) {
+    return;
+  }
+
+  const memoryStorage = new Map<string, string>();
+
+  Object.defineProperty(globalThis, name, {
+    configurable: true,
+    enumerable: true,
+    value: {
+      get length() {
+        return memoryStorage.size;
+      },
+      clear() {
+        memoryStorage.clear();
+      },
+      getItem(key: string) {
+        return memoryStorage.has(key) ? memoryStorage.get(key)! : null;
+      },
+      key(index: number) {
+        return Array.from(memoryStorage.keys())[index] ?? null;
+      },
+      removeItem(key: string) {
+        memoryStorage.delete(key);
+      },
+      setItem(key: string, value: string) {
+        memoryStorage.set(key, value);
+      },
+    },
+  });
+}
+
 async function config() {
+  ensureNodeStorageShim("localStorage");
+  ensureNodeStorageShim("sessionStorage");
+
+  const { transformerTwoslash } = await import("@shikijs/vitepress-twoslash");
+
   return defineConfig({
     lang: "en-US",
     title: "KuLiPai's Blog",

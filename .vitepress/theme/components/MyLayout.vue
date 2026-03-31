@@ -14,12 +14,16 @@
     <template #home-hero-before><HomeHero /> </template>
     <template #home-features-after> <Page /></template>
   </Layout>
+  <div class="sakana-float">
+    <SakanaWidget />
+  </div>
   <!-- copywright -->
   <CopyWright />
 </template>
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
 import HomeHero from "./HomeHero.vue";
+import SakanaWidget from "./SakanaWidget.vue";
 import CopyWright from "./CopyWright.vue";
 import Comments from "./Comments.vue";
 import Page from "./Page.vue";
@@ -55,5 +59,20 @@ button::after {
 button:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.sakana-float {
+  position: fixed;
+  right: calc(env(safe-area-inset-right) - 28px);
+  bottom: max(0px, env(safe-area-inset-bottom));
+  z-index: 999;
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .sakana-float {
+    right: calc(env(safe-area-inset-right) - 18px);
+    bottom: max(0px, env(safe-area-inset-bottom));
+  }
 }
 </style>
